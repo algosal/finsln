@@ -1,0 +1,56 @@
+/* businessChallenges.css */
+.business-challenges {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 2rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 1rem black;
+    max-height: auto;
+    overflow-x:hidden;
+
+    /* Enable vertical scrolling when content overflows */
+}
+
+.content {
+    /* Example styling for the content */
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+.business-challenges h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.business-challenges h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: black;
+}
+
+.business-challenges p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: black;
+    text-align: left;
+}
+
+.business-challenges ul {
+    font-size: 16px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.business-challenges li {
+    margin-bottom: 10px;
+    color: black;
+    text-align: left;
+}
+
+.business-challenges h2:last-child {
+    margin-bottom: 0;
+}

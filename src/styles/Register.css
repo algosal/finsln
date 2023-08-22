@@ -1,0 +1,104 @@
+/* Register.css */
+
+.register-container {
+    display: flex;
+    position: absolute;
+    top: 7rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+    height: auto;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    box-shadow: 0 0 1rem black;
+    border-radius: .25rem;
+}
+
+.register-title {
+    font-size: 28px;
+    margin: 0;
+    color: #333;
+}
+
+.register-description {
+    font-size: 16px;
+    text-align: center;
+    max-width: 500px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.registration-form {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.registration-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.registration-form input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.register-button {
+    background-color: #3366cc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #254e9b;
+}
+
+.registration-success {
+    background-color: #dff0d8;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    color: #3c763d;
+}
+
+.registration-success h3 {
+    margin-top: 0;
+    color: #4cae4c;
+}
+
+/* Register.css */
+
+/* ...existing styles... */
+
+.password-validation {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #cc0000;
+    margin-top: 5px;
+}
+
+.validation-success {
+    color: #009900;
+}
+
+.validation-fail {
+    color: #cc0000;
+}

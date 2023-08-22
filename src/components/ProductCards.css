@@ -1,0 +1,61 @@
+/* In ProductCards.css */
+.product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center cards horizontally */
+    gap: 20px;
+    max-width: 1200px;
+    /* Limit the maximum width of the cards */
+    margin: 0 auto;
+    /* Center the container horizontally */
+    padding: 20px;
+    /* Add some padding around the cards */
+    box-sizing: border-box;
+}
+
+.product-card {
+    flex: 1 1 calc(33.33% - 20px);
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 1.5rem white;
+}
+
+.product-card:hover{
+    box-shadow: inset 0rem 0rem 1rem white, .5rem .5rem 1.5rem white;
+}
+
+
+
+
+
+.business-card{
+            flex: 1 1 calc(40.33% - 20px);
+            /* border: 1px solid white; */
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: inset 0 0 1.5rem white;      
+            transition: .5s;  
+        }
+        
+        .business-card:hover{
+            /* border-radius: 0 0 3rem 0rem; */
+            box-shadow:  0 0 1.5rem white;
+            /* border:  1px solid wheat; */
+}
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .product-card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+/* Further adjustments for even smaller screens */
+@media (max-width: 480px) {
+    .product-card {
+        flex: 1 1 calc(100% - 20px);
+    }
+}
+
+

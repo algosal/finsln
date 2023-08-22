@@ -1,0 +1,70 @@
+/* Dashboard Container */
+.dashboard-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f4f4f4;
+    min-width: 80vw;
+    max-height: 50vh;
+    color: #000;
+    font-family: 'Helvetica Neue', sans-serif;
+    padding: 2rem;
+    text-align: center;
+    border-radius: .5rem;
+    box-shadow: 0 0 1rem black;
+}
+
+
+/* Dashboard Title */
+.dashboard-title {
+    position: absolute;
+    top: -1rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Dashboard Links */
+.dashboard-links {
+    margin-top: 3rem;
+    display: flex;
+        justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dashboard-link {
+    flex: 1 1 calc(25%);
+    gap: 2rem;
+    background-color: transparent;
+    min-width: 25%;
+    border: 1px solid #000;
+    border-radius: 8px;
+    color: #000;
+    font-size: 18px;
+    margin: 10px;
+    padding: 15px 20px;
+    text-decoration: none;
+    /* box-shadow: 0 0 .5rem black; */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.dashboard-link:hover {
+    /* background-color: #666; */
+    transform: scale(1.0122);
+    color: navy;
+    box-shadow: 0 0 .5rem black;
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+    .dashboard-title {
+        font-size: 2.5rem;
+        top: 0;
+    }
+
+    .dashboard-link {
+        font-size: 16px;
+        padding: 10px 15px;
+        flex: 1 1 calc(80%);
+    }
+}

@@ -1,0 +1,129 @@
+/* CSS for the Client Questionnaire Form */
+
+/* Overall styling for the form container */
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    width: 80vw;
+    /* height: 28vh; */
+    margin: 0 auto;
+    /* color: black; */
+    text-align: left;
+    box-shadow: 0 0 1rem black;
+}
+
+/* Styling for question labels */
+.info-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    height: 7vh;
+}
+
+/* Styling for the text area input */
+textarea {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    height: 16vh;
+    /* Allow vertical resizing of the text area */
+}
+
+input[type='number']{
+    width: 99%;
+    height: 1.5rem;
+    padding: .25rem;
+    /* text-align: center; */
+}
+
+
+/* Styling for the submit and save buttons */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Styling for the submit button */
+button[type="submit"] {
+    background-color: #e74c3c;
+}
+
+/* Styling for the save button */
+button[type="button"] {
+    background-color: blue;
+    margin-right: 10px;
+}
+
+button[type="back-button"]{
+    background-color:#e74c3c;
+    color: white;
+}
+button:hover{
+    opacity: .7;
+}
+.square-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    /* height: 50vh; */
+    /* width: 50vw; */
+    background-color: black;
+    box-shadow: inset 0 0 2rem white;
+    color: white;
+    border-radius: 1rem;
+    padding: 1rem 5rem;
+    padding-bottom: 2rem;
+}
+.square-s{
+    font-size: 3rem;
+}
+.special-font{
+    font-family: 'Parisienne', cursive;
+}
+.main-square-div{
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.main-square-heading-div {
+    margin: 0;
+}
+.main-square-h2-div{
+    margin: 0;
+    color:wheat;
+}
+.main-square-h3-div{
+    margin: 0;
+}
+/* Responsive styling for mobile devices */
+@media screen and (max-width: 480px) {
+    form {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+        .info-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            height: 16vh;
+        }
+        textarea{
+            width: 90%;
+        }
+}

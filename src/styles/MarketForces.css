@@ -1,0 +1,13 @@
+.market-forces-container{
+text-align: left;
+}
+.product-analysis-div > input, textarea{
+    margin-top: 1rem;
+    width: 97%;
+    padding: .5rem;
+    border: none;
+}
+.product-analysis-div>input{
+    height: 2rem;
+    border-radius: .25rem;
+}

@@ -1,0 +1,102 @@
+/* Stylish Business List Component CSS */
+
+/* Container */
+.business-list-container {
+    font-family: Arial, sans-serif;
+    width: 80vw;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 1rem rgba(0, 0, 0, 0.8);
+    text-align: left;
+    overflow-x:hidden;
+}
+
+/* Title */
+.business-list-title {
+    font-size: 2.5rem;
+    margin-bottom: 0rem;
+    color: #333;
+}
+
+/* Button */
+.add-business-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-business-button:hover {
+    background-color: #0056b3;
+}
+
+/* List */
+.business-list {
+    list-style: none;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.business-list li {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.business-list li strong {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+}
+
+/* Add Business Form */
+.add-business-form {
+    /* display: none; */
+    /* margin-top: 20vh; */
+    width: 70vw;
+}
+
+.add-business-form h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.add-business-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.add-business-form input,select,
+.add-business-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.add-business-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-business-form button:hover {
+    background-color: #0056b3;
+}
