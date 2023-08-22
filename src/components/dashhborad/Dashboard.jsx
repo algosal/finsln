@@ -13,6 +13,13 @@ const Dashboard = () => {
         <Link to="/listings" className="dashboard-link">
           Businesses
         </Link>
+        <Link to="/im" className="dashboard-link">
+          Initial Assessment
+        </Link>
+        <Link to="/terms" className="dashboard-link">
+          Terms
+        </Link>
+
         {/* <Link to="/client-questionnaire" className="dashboard-link">
           Client Questionnaire
         </Link> */}

@@ -1,59 +1,19 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import "../styles/form.css";
-import transformedQuestionnaire from "../data/InitialQuestions"; // Import the transformedQuestionnaire array
+import transformedQuestionnaire from "../data/InitialQuestions";
 import { FinSlnContext } from "../App";
 import { useNavigate } from "react-router-dom";
-// import add_business from "../utils/addBusiness";
 import update_business from "../utils/updateBusiness";
 import smallBusinessQuestions from "../data/smallQuestions";
 import microBusinessQuestions from "../data/microQuestions";
 import ideaBusinessQuestions from "../data/ideaQuestions";
 import midBusinessQuestions from "../data/midQuestions";
 import startupBusinessQuestions from "../data/startupQuestions";
-// import businessTypes from "../data/BusinessTypes";
 
 const ClientQuestionnaire = () => {
   const [FinSlnState, setFinSlnState] = useContext(FinSlnContext);
   let navigate = useNavigate();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
-  // const getQuestionFlows = (businessQuestionArray) => {
-  //   let consoleToTheGetQuestionFlows = () => {
-  //     let previous_round =
-  //       FinSlnState.dynamoDBObjectForBusiness.business.questions || [];
-  //     let i = 0;
-  //     return businessQuestionArray.map((questionObj) => {
-  //       let my_answer = "";
-  //       if (previous_round[i] && previous_round[i].answer !== "") {
-  //         my_answer = previous_round[i].answer;
-  //       } else {
-  //         my_answer = "";
-  //       }
-  //       i = i + 1;
-  //       return {
-  //         question: questionObj.question,
-  //         answer: my_answer,
-  //       };
-  //     });
-  //   };
-  //   return consoleToTheGetQuestionFlows();
-  // };
-
-  // let questionsFlow = getQuestionFlows(transformedQuestionnaire) || [];
-  // let i = 0;
-  // let questionsFlow = transformedQuestionnaire.map((questionObj) => {
-  //   let my_answer = "";
-  //   if (previous_round[i] && previous_round[i].answer !== "") {
-  //     my_answer = previous_round[i].answer;
-  //   } else {
-  //     my_answer = "";
-  //   }
-  //   i = i + 1;
-  //   return {
-  //     question: questionObj.question,
-  //     answer: my_answer,
-  //   };
-  // });
 
   const getQuestionFlows = useCallback(
     (businessQuestionArray) => {

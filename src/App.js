@@ -19,6 +19,8 @@ import BusinessUpdate from "./components/BusinessUpdate";
 import ReasonInputForm from "./components/reasons/ReasonInputForm";
 import reasonsToDoBsuiness from "./components/reasons/reasonsData";
 import Dashboard from "./components/dashhborad/Dashboard";
+import InitialGrowthAssessment from "./components/InitialAssementMeeting";
+import TermsAndConditions from "./components/Terms";
 
 const fields = [
   { name: "name", type: "text", label: "Business Name" },
@@ -180,6 +182,16 @@ function App() {
                     <Route path="/dashboard" element={<Dashboard />} />
                   ) : (
                     <Route path="/dashboard" element={<Login />} />
+                  )}
+                  {FinSlnState.authenticated ? (
+                    <Route path="/im" element={<InitialGrowthAssessment />} />
+                  ) : (
+                    <Route path="/im" element={<Login />} />
+                  )}
+                  {FinSlnState.authenticated ? (
+                    <Route path="/terms" element={<TermsAndConditions />} />
+                  ) : (
+                    <Route path="/terms" element={<Login />} />
                   )}
                 </Routes>
               </div>

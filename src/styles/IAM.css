@@ -1,0 +1,45 @@
+/* Add your global styles and fonts here */
+
+/* Style for the entire component */
+.initial-growth-assessment {
+    font-family: Arial, sans-serif;
+    padding: 0 5rem;
+    text-align: left;
+    width: 80%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/* Style for each section */
+.initial-growth-assessment section {
+    margin-bottom: 2rem;
+}
+.initial-growth-assessment section h3{
+    text-indent: 2rem;
+}
+/* Heading styles */
+.initial-growth-assessment h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Paragraph styles */
+.initial-growth-assessment p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .initial-growth-assessment h2 {
+        font-size: 20px;
+    padding: 0;
+    /* width: 50vw; */
+    overflow-x: hidden;
+    }
+
+    .initial-growth-assessment p {
+        font-size: 14px;
+    padding: 0;
+    }
+}
