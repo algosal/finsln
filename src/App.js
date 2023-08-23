@@ -99,10 +99,12 @@ function App() {
                 </div>
               ) : (
                 <div className="credentials">
-                  <button className="login-name" onClick={logout}>
-                    {" "}
-                    <span className="logout">Logout</span>
-                  </button>
+                  <Link to="/">
+                    <button className="login-name" onClick={logout}>
+                      {" "}
+                      <span className="logout">Logout</span>
+                    </button>
+                  </Link>
                 </div>
               )}
               <div className="App">

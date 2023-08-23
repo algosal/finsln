@@ -44,6 +44,10 @@
             box-shadow:  0 0 1.5rem white;
             /* border:  1px solid wheat; */
 }
+
+.back-button-products{
+    position: absolute;
+}
 /* Responsive styling for smaller screens */
 @media (max-width: 768px) {
     .product-card {
@@ -56,6 +60,10 @@
     .product-card {
         flex: 1 1 calc(100% - 20px);
     }
+        .back-button-products {
+        width: 90%;
+    }
 }
+
 
 

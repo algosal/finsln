@@ -1,5 +1,3 @@
-// Login.js
-
 import React, { useContext, useState } from "react";
 import "../styles/Login.css"; // Import the CSS file
 import { useNavigate } from "react-router-dom";
@@ -46,6 +44,12 @@ const Login = () => {
     });
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleLogin();
+    }
+  };
+
   return (
     <div className="login-container">
       {!loggedIn ? (
@@ -63,6 +67,7 @@ const Login = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onKeyPress={handleKeyPress} // Add this line to handle key press
             className="login-input"
           />
           <button onClick={handleLogin} className="login-button">

@@ -52,8 +52,7 @@ const BusinessDisplay = ({ businesses }) => {
                 onClick={() => {
                   delete_business(business_item.uuid);
                   alert(business_item.uuid + " is deleted");
-
-                  navigate("/");
+                  navigate("/dashboard");
                 }}
               >
                 Delete

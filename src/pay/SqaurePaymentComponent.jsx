@@ -5,7 +5,7 @@ import paymentGateway from "./bank.service";
 import { useNavigate } from "react-router-dom";
 
 export default function SquarePaymentComponent() {
-  let [FinsLnState, setFinSlnState] = useContext(FinSlnContext);
+  let [FinsLnState] = useContext(FinSlnContext);
   let navigate = useNavigate("./");
   // alert(JSON.stringify(FinsLnState));
   // console.log("In the Final Payment State Mode", JSON.stringify(FinsLnState));
