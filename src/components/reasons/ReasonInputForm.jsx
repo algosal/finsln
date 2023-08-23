@@ -1,16 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import saveValues from "../../utils/saveValues";
+import { FinSlnContext } from "../../App";
+import getclientValues from "../../utils/getClientValues";
 const ReasonInputForm = ({ reasons }) => {
+  let [FinSlnState] = useContext(FinSlnContext);
   let navigate = useNavigate();
   // State to store the inputs for each reason
   const [reasonInputs, setReasonInputs] = useState(
     reasons.map((reason) => ({
       ...reason,
-      questions: [], // Initialize questions array
     }))
   );
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    getclientValues("pfc.salman@gmail.com").then((d) => {
+      if (d.length) {
+        setReasonInputs(
+          d.map((reason) => ({
+            ...reason,
+          }))
+        );
+      } else {
+      }
+    });
+  }, []);
 
   // Function to handle input changes for each reason
   const handleInputChange = (index, inputName, value) => {
@@ -22,13 +37,24 @@ const ReasonInputForm = ({ reasons }) => {
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Inputs for each reason:", reasonInputs);
-    alert(JSON.stringify(reasonInputs));
+    // console.log("Inputs for each reason:", reasonInputs);
+    // alert(JSON.stringify(FinSlnState));
   };
 
   // Function to handle saving data to the database
   const handleSaveToDatabase = () => {
     // alert(JSON.stringify(reasonInputs));
+    // alert(JSON.stringify(FinSlnState));
+    saveValues(
+      JSON.stringify({
+        reasons: reasonInputs,
+        email: FinSlnState.dynamoDBObjectForBusiness.email,
+      })
+    );
+    goBack();
+  };
+
+  const goBack = () => {
     navigate("/dashboard");
   };
 
@@ -52,8 +78,9 @@ const ReasonInputForm = ({ reasons }) => {
     <form onSubmit={handleSubmit}>
       <div>
         <div>
+          <h1>Self Awareness Questions</h1>
           <label>
-            Reason:
+            Reasons to Start the Business:
             <select
               value={currentReason.reason}
               onChange={(e) => {
@@ -72,7 +99,7 @@ const ReasonInputForm = ({ reasons }) => {
             </select>
           </label>
         </div>
-
+        {/* 
         <div>
           <label>
             Importance in Percentage:
@@ -88,7 +115,7 @@ const ReasonInputForm = ({ reasons }) => {
               }
             />
           </label>
-        </div>
+        </div> */}
 
         <div>
           <label>
@@ -131,7 +158,10 @@ const ReasonInputForm = ({ reasons }) => {
         </button>
         {/* <button type="submit">Add Reason</button> */}
         <button type="back-button" onClick={handleSaveToDatabase}>
-          Back to Dashboard
+          Save
+        </button>
+        <button type="back-button" onClick={goBack}>
+          Go Back{" "}
         </button>
       </div>
     </form>

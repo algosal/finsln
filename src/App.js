@@ -14,13 +14,14 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import ProductCards from "./components/Products";
 import Businesses from "./components/Businesses";
-import DesiresAndWantsForm from "./components/ProductInfo";
+// import DesiresAndWantsForm from "./components/ProductInfo";
 import BusinessUpdate from "./components/BusinessUpdate";
 import ReasonInputForm from "./components/reasons/ReasonInputForm";
 import reasonsToDoBsuiness from "./components/reasons/reasonsData";
 import Dashboard from "./components/dashhborad/Dashboard";
 import InitialGrowthAssessment from "./components/InitialAssementMeeting";
 import TermsAndConditions from "./components/Terms";
+import PasswordReset from "./components/CangePassword";
 
 const fields = [
   { name: "name", type: "text", label: "Business Name" },
@@ -62,10 +63,10 @@ function App() {
       authenticated: false,
     });
   };
-  let login = () => {
-    // setAuthenticated(true)
-    setFinSlnState({ ...FinSlnState, authenticated: true });
-  };
+  // let login = () => {
+  //   // setAuthenticated(true)
+  //   setFinSlnState({ ...FinSlnState, authenticated: true });
+  // };
 
   return (
     <BrowserRouter>
@@ -139,6 +140,7 @@ function App() {
                   <Route path="login" element={<Login />} />
                   <Route path="services" element={<ProductCards />} />
                   <Route path="businesses" element={<Businesses />} />
+                  <Route path="password-reset" element={<PasswordReset />} />
                   {/* <Route path="productinfo" element={<DesiresAndWantsForm />} /> */}
                   {FinSlnState.authenticated ? (
                     <Route

@@ -1,0 +1,50 @@
+{
+  "object": {
+    "type": "ITEM",
+    "id": "CUQRHRG3DRKLQJEK5TAF46WR",
+    "updated_at": "2023-08-21T22:29:20.634Z",
+    "created_at": "2023-08-21T22:10:02.308Z",
+    "version": 1692656960634,
+    "is_deleted": false,
+    "present_at_all_locations": true,
+    "item_data": {
+      "name": "Initial Growth Assessment",
+      "description": "This Assessment is based on the information client gives us on the portal where we then make a create of report that gives an overview to the client about what areas to focus on for more rapid growth",
+      "is_taxable": true,
+      "visibility": "PRIVATE",
+      "category_id": "I3ZAR5BHT3UIJBGQRQXIWKBN",
+      "variations": [
+        {
+          "type": "ITEM_VARIATION",
+          "id": "4ZGMEGU6NM33FLO7RIDZDYN7",
+          "updated_at": "2023-08-21T22:29:20.634Z",
+          "created_at": "2023-08-21T22:10:02.308Z",
+          "version": 1692656960634,
+          "is_deleted": false,
+          "present_at_all_locations": true,
+          "item_variation_data": {
+            "item_id": "CUQRHRG3DRKLQJEK5TAF46WR",
+            "name": "Regular",
+            "sku": "FinSln-001",
+            "ordinal": 1,
+            "pricing_type": "FIXED_PRICING",
+            "price_money": {
+              "amount": 79999,
+              "currency": "USD"
+            },
+            "track_inventory": false,
+            "measurement_unit_id": "T3GX75SHFSDD3BGHWLVVXC26",
+            "sellable": true,
+            "stockable": true
+          }
+        }
+      ],
+      "product_type": "REGULAR",
+      "skip_modifier_screen": false,
+      "ecom_visibility": "UNINDEXED",
+      "description_html": "<p>This Assessment is based on the information client gives us on the portal where we then make a create of report that gives an overview to the client about what areas to focus on for more rapid growth</p>",
+      "description_plaintext": "This Assessment is based on the information client gives us on the portal where we then make a create of report that gives an overview to the client about what areas to focus on for more rapid growth",
+      "is_archived": false
+    }
+  }
+}

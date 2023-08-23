@@ -1,7 +1,12 @@
 import React from "react";
 import "../styles/TermsAndConditions.css"; // Adjust the path to your CSS file
+import { useNavigate } from "react-router-dom";
 
 const TermsAndConditions = () => {
+  let navigate = useNavigate();
+  let goBack = () => {
+    navigate("/dashboard");
+  };
   return (
     <div className="terms-and-conditions">
       <h2>Terms and Conditions</h2>
@@ -38,6 +43,9 @@ const TermsAndConditions = () => {
         these terms and conditions. If you do not agree with these terms, please
         refrain from using our website.
       </p>
+      <button className="back-button" onClick={goBack}>
+        Back
+      </button>
     </div>
   );
 };

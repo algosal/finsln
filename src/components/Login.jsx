@@ -14,7 +14,16 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
 
+  const handlePasswordReset = () => {
+    navigate("/password-reset");
+  };
+
   const handleLogin = () => {
+    if (!username || !password) {
+      alert("Fields Empty");
+      return;
+    }
+
     // Implement your login logic here
     login({ email: username, password }).then((d) => {
       if (d === 200) {
@@ -58,6 +67,9 @@ const Login = () => {
           />
           <button onClick={handleLogin} className="login-button">
             Login
+          </button>
+          <button onClick={handlePasswordReset} className="login-button">
+            Forgot Password
           </button>
         </div>
       ) : (

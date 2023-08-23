@@ -1,7 +1,12 @@
 import React from "react";
 import "../styles/IAM.css"; // Make sure to adjust the path to your CSS file
+import { useNavigate } from "react-router-dom";
 
 const InitialGrowthAssessment = () => {
+  let navigate = useNavigate();
+  const goBack = () => {
+    navigate("/dashboard");
+  };
   return (
     <div className="initial-growth-assessment">
       <section className="section">
@@ -38,6 +43,9 @@ const InitialGrowthAssessment = () => {
           subsequent report.
         </p>
       </section>
+      <button type="back-button" onClick={goBack}>
+        Back
+      </button>
     </div>
   );
 };

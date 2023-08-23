@@ -1,17 +1,10 @@
 const transformedQuestionnaire = [
   {
     question:
-      "Who is the person to attend the Assessment Meeting for This Business. Include all Informaton",
+      "Who is the person to attend the Assessment Meeting for This Business. Include all Information",
     answer: "",
     placeholder:
-      "The person to attend this meeting is Mr./ Miss. last name, first name. To reach them call 1-123-123-1234 their email is and the other information is...",
-  },
-  {
-    question:
-      "Please Confirm that you understand that this is an Initial Growth Assessment Meeting...",
-    answer: "",
-    placeholder:
-      "By Clicking Next I Agree to the Statement that this meeting is for the Initial Growth Assessment.",
+      "The person to attend this meeting is Mr./Miss. last name, first name. To reach them call 1-123-123-1234 their email is and the other information is...",
   },
   {
     question:
@@ -51,7 +44,35 @@ const transformedQuestionnaire = [
     placeholder:
       "We maintain financial reports such as balance sheets and income statements to evaluate our financial health.",
   },
-  // ... (similarly, answers and placeholders for other questions)
+  {
+    question: "What are the challenges the business is facing right now?",
+    answer:
+      "Currently, we're experiencing challenges related to supply chain disruptions and increased competition in the market.",
+    placeholder:
+      "We're facing challenges such as X and Y, which are impacting our operations.",
+  },
+  {
+    question:
+      "Do you have a business growth plan or expansion strategy in place?",
+    answer: "",
+    placeholder:
+      "Yes, we have a growth plan that includes opening a new location and launching an online store to reach a wider audience.",
+  },
+  {
+    question: "How do you currently channel sales for your business?",
+    answer: "",
+    placeholder:
+      "We primarily channel sales through our e-commerce website and also partner with local retailers.",
+  },
+  {
+    question:
+      "Is there anything else you'd like to share with us that you feel is important for the growth assessment?",
+    answer:
+      "We believe that focusing on customer retention will be crucial for our growth strategy.",
+    placeholder:
+      "We'd also like to emphasize the importance of customer retention for our growth.",
+  },
+  // ... (additional questions if needed)
 ];
 
 export default transformedQuestionnaire;

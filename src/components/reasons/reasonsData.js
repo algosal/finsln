@@ -19,10 +19,18 @@ const reasonsToDoBusiness = [
   { reason: "Taking Control of Career", importance: 70, level: "Moderate" },
   { reason: "Market Penetration", importance: 70, level: "Moderate" },
   { reason: "Geographical Expansion", importance: 65, level: "Moderate" },
-  { reason: "Brand Awareness and Recognition", importance: 65, level: "Moderate" },
+  {
+    reason: "Brand Awareness and Recognition",
+    importance: 65,
+    level: "Moderate",
+  },
   { reason: "Employee Growth", importance: 60, level: "Moderate" },
   { reason: "Product or Service Expansion", importance: 70, level: "Moderate" },
-  { reason: "Employee Productivity and Efficiency", importance: 60, level: "Moderate" },
+  {
+    reason: "Employee Productivity and Efficiency",
+    importance: 60,
+    level: "Moderate",
+  },
 
   // Low Importance
   { reason: "Prestige and Status", importance: 40, level: "Low" },
@@ -39,8 +47,7 @@ const reasonsToDoBusiness = [
   { reason: "Quick Fixes", importance: 35, level: "Low" },
   { reason: "Lack of Risk Tolerance", importance: 25, level: "Low" },
   { reason: "Status Quo Maintenance", importance: 30, level: "Low" },
-  { reason: "Avoiding Authority", importance: 20, level: "Low" }
+  { reason: "Avoiding Authority", importance: 20, level: "Low" },
 ];
-
 
 export default reasonsToDoBusiness;

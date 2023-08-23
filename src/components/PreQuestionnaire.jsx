@@ -14,6 +14,7 @@ const ClientQuestionnaire = () => {
   const [FinSlnState, setFinSlnState] = useContext(FinSlnContext);
   let navigate = useNavigate();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
 
   const getQuestionFlows = useCallback(
     (businessQuestionArray) => {
@@ -60,7 +61,7 @@ const ClientQuestionnaire = () => {
       updatedAnswers = MicroBusinessQuestionsFlow;
     } else if (businessType === "Small Business") {
       updatedAnswers = SmallBusinessQuestionsFlow;
-    } else if (businessType === "Mid-size Business") {
+    } else if (businessType === "Mid-Size Business") {
       updatedAnswers = MidBusinessQuestionsFlow;
     } else if (businessType === "Startup") {
       updatedAnswers = StartupBusinessQuestionsFlow;
@@ -120,27 +121,15 @@ const ClientQuestionnaire = () => {
     setIsSaved(true);
   };
 
+  const handleCheckboxChange = (e) => {
+    setIsCheckboxChecked(e.target.checked);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/pay");
-    setFinSlnState({
-      ...FinSlnState,
-      dynamoDBObjectForBusiness: {
-        ...FinSlnState.dynamoDBObjectForBusiness,
-        business: {
-          ...FinSlnState.dynamoDBObjectForBusiness.business,
-          questions: answers,
-        },
-      },
-    });
-    console.log("Client's answers:", answers);
-    save_to_dynamoDB({
-      ...FinSlnState.dynamoDBObjectForBusiness,
-      business: {
-        ...FinSlnState.dynamoDBObjectForBusiness.business,
-        questions: answers,
-      },
-    });
+    if (isCheckboxChecked) {
+      navigate("/pay"); // Navigate to the payment page
+    }
   };
 
   let save_to_dynamoDB = (SaveState) => {
@@ -164,6 +153,24 @@ const ClientQuestionnaire = () => {
             onChange={(e) => handleAnswerChange(e.target.value)}
             placeholder={currentQuestionObj.placeholder}
           />
+        </div>
+        <div>
+          {/* Consent Checkbox */}
+          <label>
+            <input
+              type="checkbox"
+              checked={isCheckboxChecked}
+              onChange={handleCheckboxChange}
+            />
+            I consent to the
+            <span
+              style={{ cursor: "pointer", textDecoration: "none" }}
+              onClick={() => navigate("/terms")}
+            >
+              {" "}
+              terms and conditions
+            </span>
+          </label>
         </div>
         <div>
           <button
@@ -193,7 +200,9 @@ const ClientQuestionnaire = () => {
           </button>
 
           {currentQuestionIndex === answers.length - 1 && (
-            <button type="submit"> Reserve Growth Assessment</button>
+            <button type="submit" disabled={!isCheckboxChecked}>
+              Reserve Growth Assessment
+            </button>
           )}
         </div>
         {isSaved && <p style={{ color: "green" }}>Form data has been saved.</p>}

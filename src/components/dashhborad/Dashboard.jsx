@@ -17,7 +17,7 @@ const Dashboard = () => {
           Initial Assessment
         </Link>
         <Link to="/terms" className="dashboard-link">
-          Terms
+          Terms and Conditions of use
         </Link>
 
         {/* <Link to="/client-questionnaire" className="dashboard-link">

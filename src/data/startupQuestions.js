@@ -1,64 +1,80 @@
-const startupBusinessQuestions = [
+const commonQuestions = [
   {
     question:
-      "START UP Who is the person to attend the Assessment Meeting for This Business. Include all Informaton",
+      "Who is the person to attend the Assessment Meeting for This Business. Include all Information",
     answer: "",
     placeholder:
-      "The person to attend this meeting is Mr./ Miss. last name, first name. To reach them call 1-123-123-1234 their email is and the other information is...",
+      "The person to attend this meeting is Mr./Miss. last name, first name. To reach them, call 1-123-123-1234. Their email is and the other information is...",
+  },
+  {
+    question: "What are the key challenges you face as a Startup?",
+    answer: "",
+    placeholder:
+      "As a Startup, we face challenges such as limited resources, competition, and building brand awareness.",
   },
   {
     question:
-      "Please Confirm that you understand that this is an Initial Growth Assessment Meeting...",
+      "Do you have a business growth plan or expansion strategy in place?",
     answer: "",
     placeholder:
-      "By Clicking Next I Agree to the Statement that this meeting is for the Initial Growth Assessment.",
+      "Yes, we have a growth plan that includes opening a new location and launching an online store to reach a wider audience.",
+  },
+  {
+    question: "How do you currently channel sales for your business?",
+    answer: "",
+    placeholder:
+      "We primarily channel sales through our e-commerce website and also partner with local retailers.",
   },
   {
     question:
       "What are your primary business objectives for the next year? (e.g., revenue growth, market expansion, profitability improvement)",
     answer:
-      "Our main goal for the next year is to achieve a 20% growth in revenue through effective market expansion strategies.",
-    placeholder: "We aim to expand our market and increase revenue by X%.",
-  },
-  {
-    question:
-      "What are your primary business objectives for the next year? (e.g., revenue growth, market expansion, profitability improvement)",
-    answer:
-      "Our main goal for the next year is to achieve a 20% growth in revenue through effective market expansion strategies.",
-    placeholder: "We aim to expand our market and increase revenue by X%.",
+      "Our main goal for the next year is to achieve rapid revenue growth through aggressive market expansion strategies.",
+    placeholder: "We aim for rapid market expansion and revenue growth.",
   },
   {
     question:
       "Are there any specific milestones or targets you want to achieve?",
     answer:
-      "We're targeting to onboard 1000 new customers and launch a new product line by the end of the year.",
+      "We're targeting to secure 100,000 users within the first six months and establish partnerships with key industry players.",
     placeholder:
-      "We have set milestones to reach X number of customers and launch Y product by Z date.",
+      "Our milestones include acquiring X users and forming partnerships with Y industry leaders.",
   },
+];
+
+const startupBusinessQuestions = [
+  ...commonQuestions,
   {
-    question: "What does success look like for your business in the long term?",
+    question: "What is the unique value proposition (UVP) of your startup?",
     answer:
-      "In the long term, we envision our business as a recognized leader in our industry, providing innovative solutions and maintaining a strong customer base.",
+      "Our startup offers a cutting-edge AI-powered solution that automates complex business processes, saving time and costs for our clients.",
     placeholder:
-      "Success for us means becoming an industry leader known for innovation and customer satisfaction.",
-  },
-  {
-    question:
-      "Can you provide an overview of your current financial position? (e.g., annual revenue, expenses, profit)",
-    answer:
-      "Currently, our annual revenue stands at $2 million, with expenses of $1.5 million, resulting in a profit of $500,000.",
-    placeholder:
-      "Our financial overview includes an annual revenue of $X million, expenses of $Y million, and a profit of $Z million.",
+      "Our UVP lies in providing an AI-driven solution that revolutionizes business processes.",
   },
   {
     question:
-      "Do you have any existing financial and business reports? (e.g., balance sheets, income statements)",
+      "How do you plan to attract and retain customers in the competitive startup landscape?",
     answer:
-      "Yes, we have comprehensive financial reports, including balance sheets and income statements, which we use to assess our financial health.",
+      "We'll implement a data-driven marketing strategy, leverage influencer partnerships, and focus on exceptional customer experience to retain clients.",
     placeholder:
-      "We maintain financial reports such as balance sheets and income statements to evaluate our financial health.",
+      "Our customer acquisition strategy includes data-driven marketing and creating exceptional customer experiences.",
   },
-  // ... (similarly, answers and placeholders for other questions)
+  {
+    question:
+      "What is your funding strategy? How do you plan to secure investment for your startup?",
+    answer:
+      "We're actively seeking seed funding from angel investors and plan to participate in pitch competitions to raise capital for product development and market expansion.",
+    placeholder:
+      "Our funding strategy involves securing seed investment from angel investors and participating in pitch competitions.",
+  },
+  // ... (add more questions specific to startup businesses)
+  {
+    question:
+      "Is there anything else you'd like to share with us that you feel is important for the growth assessment?",
+    answer: "",
+    placeholder:
+      "We value your insights. Please feel free to share any additional information that you think is relevant for our assessment.",
+  },
 ];
 
 export default startupBusinessQuestions;

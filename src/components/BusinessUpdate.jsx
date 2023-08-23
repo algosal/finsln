@@ -7,7 +7,7 @@ import update_business from "../utils/updateBusiness";
 
 const BusinessUpdate = () => {
   let navigate = useNavigate();
-  let [FinsLnState, setFinSlnState] = useContext(FinSlnContext);
+  let [FinsLnState] = useContext(FinSlnContext);
 
   // console.log(FinsLnState);
   const [newBusiness, setNewBusiness] = useState(
@@ -44,8 +44,7 @@ const BusinessUpdate = () => {
       newBusiness.revenue > 0 &&
       isEmailValid(newBusiness.email) &&
       isPhoneNumberValid(newBusiness.phoneNumber) &&
-      newBusiness.address &&
-      newBusiness.type
+      newBusiness.address
     ) {
       handleSaveBusiness();
     } else {
@@ -110,6 +109,7 @@ const BusinessUpdate = () => {
         onChange={(e) =>
           setNewBusiness({ ...newBusiness, type: e.target.value })
         }
+        disabled // Disable the select element
       >
         <option value="">Select Type</option>
         {businessTypes.map((type) => (
