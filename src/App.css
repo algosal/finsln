@@ -48,14 +48,20 @@ left: 0;
 .initial-meeting{
 position: fixed;
 bottom: 1rem;
-transition: .5s;
-color: lightcyan;
+right: 1rem;
+transition: .3s;
+color: orange;
+background-color: black;
+box-shadow: .5rem .5rem 1rem black;
 }
 .initial-meeting:hover{
+  opacity: .9;
+}
+.initial-meeting:active {
   color: orange;
   background-color: black;
+  box-shadow: .25rem .25rem .5rem black;
 }
-
 p{
   font-size: large;
   text-indent: 2rem;
@@ -156,7 +162,10 @@ color: blue;
   }
 .initial-meeting {
   position:relative;
-  margin-top: 1rem;
-  margin: 0;
 }
+}
+
+.welcome-heading{
+  font-size: 3.4rem;
+  font-variant: small-caps;
 }

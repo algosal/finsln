@@ -86,6 +86,11 @@ button:hover{
     padding: 1rem 5rem;
     padding-bottom: 2rem;
 }
+.square-wait{
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+}
 .square-s{
     font-size: 3rem;
 }

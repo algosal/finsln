@@ -1,0 +1,81 @@
+
+.main-heading {
+    text-align: left;
+    margin-top: -1rem;
+    margin-left: 1rem;
+    font-size: 2.5rem;
+    position: fixed;
+
+}
+
+.payment-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-align: left;
+    align-items: center;
+    width: 90vw;
+}
+
+.payment-card {
+    position: relative;
+    flex: 1 1 calc(80%);
+    border: 1px solid #ccc;
+    padding: 1rem;
+    background-color: #e9e9e9;
+    border-radius: .25rem;
+    box-shadow: 1rem 1.5rem 2rem black;
+        /* transition: transform 0.2s ease, background-color 0.2s ease; */
+        transition: .1s;
+        margin: 1rem;
+    font-family: 'Courier New', Courier, monospace;}
+.payment-card:hover {
+    background-color: #f4f4f4;
+    /* color: black; */
+    /* transform: translateY(2px) translateX(2px) rotateX(10deg) scale(.999); */
+    /* box-shadow: .5rem .5rem .5rem black; */
+}
+.payment-card:hover>.payment-card__business {
+    color: brown;
+}
+.payment-card:hover> 
+.payment-card__status
+ {
+    color: green;
+}
+.payment-card:active {
+    transform: translateY(2px) translateX(2px) rotateX(10deg) scale(.999);
+    background-color: #d0d0d0;
+    box-shadow: .5rem .5rem .5rem black;
+}
+.payment-card__id {
+    margin: 0;
+}
+
+.payment-card__status,
+.payment-card__amount,
+.payment-card__email,
+.payment-card__timestamp,
+.payment-card__business {
+    margin: 5px 0;
+    color: black;
+}
+
+
+
+.payment-card__business{
+    font-size: 2rem;
+    color: black;
+}
+
+.payment-card__amount{
+    position: absolute;
+    bottom: 0rem;
+    right: .5rem;
+}
+.payment-card__divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+}

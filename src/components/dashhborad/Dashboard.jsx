@@ -16,8 +16,8 @@ const Dashboard = () => {
         <Link to="/im" className="dashboard-link">
           Initial Assessment
         </Link>
-        <Link to="/terms" className="dashboard-link">
-          Terms and Conditions of use
+        <Link to="/orders" className="dashboard-link">
+          Business Orders
         </Link>
 
         {/* <Link to="/client-questionnaire" className="dashboard-link">

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/BusinessInsert.css";
 import add_business from "../utils/addBusiness";
 import { FinSlnContext } from "../App";
+import businessLegals from "../data/BusinessLegals";
 
 const BusinessInsert = () => {
   let [FinSlnState, setFinSlnState] = useContext(FinSlnContext);
@@ -16,6 +17,7 @@ const BusinessInsert = () => {
     email: "",
     phoneNumber: "",
     address: "",
+    legal: "",
     type: "",
   };
   const [newBusiness, setNewBusiness] = useState(initial_state);
@@ -41,14 +43,37 @@ const BusinessInsert = () => {
   };
 
   const handleSave = () => {
-    if (
-      newBusiness.name &&
-      newBusiness.revenue > 0 &&
-      isEmailValid(newBusiness.email) &&
-      isPhoneNumberValid(newBusiness.phoneNumber) &&
-      newBusiness.address &&
-      newBusiness.type
-    ) {
+    const validationErrors = [];
+
+    if (!newBusiness.name) {
+      validationErrors.push("Name is required.");
+    }
+
+    if (newBusiness.revenue <= 0) {
+      validationErrors.push("Revenue must be greater than 0.");
+    }
+
+    if (!isEmailValid(newBusiness.email)) {
+      validationErrors.push("Email is invalid.");
+    }
+
+    if (!isPhoneNumberValid(newBusiness.phoneNumber)) {
+      validationErrors.push("Phone number is invalid. Use 10 digits.");
+    }
+
+    if (!newBusiness.address) {
+      validationErrors.push("Address is required.");
+    }
+
+    if (!newBusiness.legal) {
+      validationErrors.push("Legal Structure is required.");
+    }
+
+    if (!newBusiness.type) {
+      validationErrors.push("Type is required.");
+    }
+
+    if (validationErrors.length === 0) {
       setFinSlnState({ ...FinSlnState, info: newBusiness });
       handleSaveBusiness({
         business: {
@@ -58,7 +83,9 @@ const BusinessInsert = () => {
         email: FinSlnState.dynamoDBObjectForBusiness.email,
       });
     } else {
-      alert("Please fill out all fields correctly before saving.");
+      alert(
+        "Please correct the following errors:\n" + validationErrors.join("\n")
+      );
     }
   };
 
@@ -113,6 +140,24 @@ const BusinessInsert = () => {
         }
       />
       <br />
+      <label>Legal Structure:</label>
+      <select
+        value={newBusiness.legal}
+        onChange={(e) =>
+          setNewBusiness({ ...newBusiness, legal: e.target.value })
+        }
+      >
+        <br />
+
+        <option value="">Select Legal Structure of the Business</option>
+        {businessLegals.map((legal) => (
+          <option key={legal} value={legal}>
+            {legal}
+          </option>
+        ))}
+      </select>
+      <br />
+      <br />
       <label>Type:</label>
       <select
         value={newBusiness.type}
@@ -120,6 +165,8 @@ const BusinessInsert = () => {
           setNewBusiness({ ...newBusiness, type: e.target.value })
         }
       >
+        <br />
+
         <option value="">Select Type</option>
         {businessTypes.map((type) => (
           <option key={type} value={type}>

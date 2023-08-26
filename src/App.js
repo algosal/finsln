@@ -22,6 +22,8 @@ import Dashboard from "./components/dashhborad/Dashboard";
 import InitialGrowthAssessment from "./components/InitialAssementMeeting";
 import TermsAndConditions from "./components/Terms";
 import PasswordReset from "./components/CangePassword";
+import PaymentList from "./components/orders/Orders";
+import Solutions from "./components/Solutions";
 
 const fields = [
   { name: "name", type: "text", label: "Business Name" },
@@ -196,6 +198,16 @@ function App() {
                     <Route path="/terms" element={<TermsAndConditions />} />
                   ) : (
                     <Route path="/terms" element={<Login />} />
+                  )}{" "}
+                  {FinSlnState.authenticated ? (
+                    <Route path="/orders" element={<PaymentList />} />
+                  ) : (
+                    <Route path="/orders" element={<Login />} />
+                  )}
+                  {FinSlnState.authenticated ? (
+                    <Route path="/solutions" element={<Solutions />} />
+                  ) : (
+                    <Route path="/solutions" element={<Login />} />
                   )}
                 </Routes>
               </div>

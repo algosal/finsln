@@ -127,6 +127,7 @@ const ClientQuestionnaire = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    handleSave();
     if (isCheckboxChecked) {
       navigate("/pay"); // Navigate to the payment page
     }

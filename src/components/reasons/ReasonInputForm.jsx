@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 import saveValues from "../../utils/saveValues";
 import { FinSlnContext } from "../../App";
 import getclientValues from "../../utils/getClientValues";
+import saveValuesForAnalysis from "../../utils/saveValuesAnalysis";
 const ReasonInputForm = ({ reasons }) => {
   let [FinSlnState] = useContext(FinSlnContext);
   let navigate = useNavigate();
+  // console.log(FinSlnState.dynamoDBObjectForBusiness.email);
   // State to store the inputs for each reason
   const [reasonInputs, setReasonInputs] = useState(
     reasons.map((reason) => ({
@@ -15,17 +17,26 @@ const ReasonInputForm = ({ reasons }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    getclientValues("pfc.salman@gmail.com").then((d) => {
-      if (d.length) {
+    getclientValues(FinSlnState.dynamoDBObjectForBusiness.email).then((d) => {
+      // console.log(d);
+      if (d.length > 0) {
+        // console.log("Found and will update");
+        // console.log(d);
         setReasonInputs(
           d.map((reason) => ({
             ...reason,
           }))
         );
       } else {
+        // console.log("not found any records");
+        setReasonInputs(
+          reasons.map((reason) => ({
+            ...reason,
+          }))
+        );
       }
     });
-  }, []);
+  }, [FinSlnState.dynamoDBObjectForBusiness.email, reasons]);
 
   // Function to handle input changes for each reason
   const handleInputChange = (index, inputName, value) => {
@@ -37,6 +48,13 @@ const ReasonInputForm = ({ reasons }) => {
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+    saveValuesForAnalysis(
+      JSON.stringify({
+        reasons: reasonInputs,
+        email: FinSlnState.dynamoDBObjectForBusiness.email,
+      })
+    );
+    handleSaveToDatabase();
     // console.log("Inputs for each reason:", reasonInputs);
     // alert(JSON.stringify(FinSlnState));
   };
@@ -156,10 +174,14 @@ const ReasonInputForm = ({ reasons }) => {
         >
           Next
         </button>
-        {/* <button type="submit">Add Reason</button> */}
-        <button type="back-button" onClick={handleSaveToDatabase}>
-          Save
-        </button>
+        {currentIndex === reasons.length - 1 ? (
+          <button type="submit">Submit</button>
+        ) : (
+          <button type="back-button" onClick={handleSaveToDatabase}>
+            Save
+          </button>
+        )}
+
         <button type="back-button" onClick={goBack}>
           Go Back{" "}
         </button>

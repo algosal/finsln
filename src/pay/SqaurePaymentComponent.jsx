@@ -3,12 +3,15 @@ import { CreditCard, PaymentForm } from "react-square-web-payments-sdk";
 import { FinSlnContext } from "../App";
 import paymentGateway from "./bank.service";
 import { useNavigate } from "react-router-dom";
+import update_business from "../utils/updateBusiness";
+import { useState } from "react";
 
 export default function SquarePaymentComponent() {
-  let [FinsLnState] = useContext(FinSlnContext);
+  let [FinSlnState] = useContext(FinSlnContext);
+  let [showWait, setShowWatit] = useState(false);
   let navigate = useNavigate("./");
-  // alert(JSON.stringify(FinsLnState));
-  // console.log("In the Final Payment State Mode", JSON.stringify(FinsLnState));
+  // alert(JSON.stringify(FinSlnState));
+  // console.log("In the Final Payment State Mode", JSON.stringify(FinSlnState));
 
   return (
     <div className="square-container">
@@ -19,28 +22,37 @@ export default function SquarePaymentComponent() {
           </div>
         </h1>
         Payment Form
+        {showWait ? <h1 className="square-wait">PLEASE WAIT</h1> : <></>}
         <h3 className="main-square-h3-div">Initial Business Assessment</h3>
         <h2 className="main-square-h2-div">Total: $799.99</h2>
       </div>
       <PaymentForm
         applicationId="sandbox-sq0idb-rjKPfKEHizI4LPV1lYyjNA"
         cardTokenizeResponseReceived={(token, verifiedBuyer) => {
-          alert(JSON.stringify(token.token));
+          setShowWatit(true);
+          // alert(JSON.stringify(token.token));
           //          setFinSlnState({ ...FinsLnState, nonce: "cnon:card-nonce-ok" });
           // alert(JSON.stringify(FinsLnState));
-          console.log({
-            ...FinsLnState.dynamoDBObjectForBusiness,
-            nonce: "cnon:card-nonce-ok",
-          });
+          // console.log({
+          //   ...FinSlnState.dynamoDBObjectForBusiness,
+          //   nonce: "cnon:card-nonce-ok",
+          // });
           paymentGateway({
-            ...FinsLnState.dynamoDBObjectForBusiness,
+            ...FinSlnState.dynamoDBObjectForBusiness,
             nonce: "cnon:card-nonce-ok",
           }).then((d) => {
-            alert(d);
+            // alert(d);
+            setShowWatit(false);
+
+            update_business({
+              ...FinSlnState.dynamoDBObjectForBusiness,
+              business: {
+                ...FinSlnState.dynamoDBObjectForBusiness.business,
+                questions: [],
+              },
+            });
             navigate("/");
           });
-          // console.log("token:", token);
-          // console.log("verifiedBuyer:", verifiedBuyer);
         }}
         locationId="LP1W66XNB3MWG"
       >

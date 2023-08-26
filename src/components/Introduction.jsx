@@ -17,7 +17,7 @@ const WelcomePage = () => {
 
   return (
     <div className="welcome">
-      <h1>Welcome</h1>
+      <h1 className="welcome-heading">Welcome</h1>
       <p className="">
         We are dedicated to helping businesses achieve growth and success. Our
         team of experts in accounting and finance is here to support you on your

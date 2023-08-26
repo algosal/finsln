@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/BusinessInsert.css";
 import { FinSlnContext } from "../App";
 import update_business from "../utils/updateBusiness";
+import businessLegals from "../data/BusinessLegals";
 
 const BusinessUpdate = () => {
   let navigate = useNavigate();
@@ -118,6 +119,24 @@ const BusinessUpdate = () => {
           </option>
         ))}
       </select>
+      <br />
+
+      <label>Legal:</label>
+      <select
+        value={newBusiness.legal}
+        onChange={(e) =>
+          setNewBusiness({ ...newBusiness, legal: e.target.value })
+        }
+        disabled // Disable the select element
+      >
+        <option value="">Select Legals</option>
+        {businessLegals.map((legal) => (
+          <option key={legal} value={legal}>
+            {legal}
+          </option>
+        ))}
+      </select>
+
       <br />
       <button onClick={handleSave}>Save Business</button>
       <button
