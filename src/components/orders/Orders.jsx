@@ -28,9 +28,15 @@ const PaymentList = () => {
     fetchPaymentInformation();
   }, [fetchPaymentInformation]);
 
+  let goBack = () => {
+    navigate("/dashboard");
+  };
   return (
-    <div>
-      <h2 className="main-heading">Payment Information</h2>
+    <div className="orders-container">
+      <h2 className="main-heading">Orders</h2>
+      <button type="back-button" className="back-from-orders" onClick={goBack}>
+        Back
+      </button>
       <div className="payment-list">
         {paymentData.map((payment) => (
           <div

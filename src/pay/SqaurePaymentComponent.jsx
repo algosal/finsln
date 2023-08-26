@@ -22,42 +22,41 @@ export default function SquarePaymentComponent() {
           </div>
         </h1>
         Payment Form
-        {showWait ? <h1 className="square-wait">PLEASE WAIT</h1> : <></>}
         <h3 className="main-square-h3-div">Initial Business Assessment</h3>
         <h2 className="main-square-h2-div">Total: $799.99</h2>
       </div>
-      <PaymentForm
-        applicationId="sandbox-sq0idb-rjKPfKEHizI4LPV1lYyjNA"
-        cardTokenizeResponseReceived={(token, verifiedBuyer) => {
-          setShowWatit(true);
-          // alert(JSON.stringify(token.token));
-          //          setFinSlnState({ ...FinsLnState, nonce: "cnon:card-nonce-ok" });
-          // alert(JSON.stringify(FinsLnState));
-          // console.log({
-          //   ...FinSlnState.dynamoDBObjectForBusiness,
-          //   nonce: "cnon:card-nonce-ok",
-          // });
-          paymentGateway({
-            ...FinSlnState.dynamoDBObjectForBusiness,
-            nonce: "cnon:card-nonce-ok",
-          }).then((d) => {
-            // alert(d);
-            setShowWatit(false);
+      {showWait ? (
+        <h1 className="square-wait">PLEASE WAIT</h1>
+      ) : (
+        <>
+          <PaymentForm
+            applicationId="sandbox-sq0idb-rjKPfKEHizI4LPV1lYyjNA"
+            cardTokenizeResponseReceived={(token, verifiedBuyer) => {
+              setShowWatit(true);
 
-            update_business({
-              ...FinSlnState.dynamoDBObjectForBusiness,
-              business: {
-                ...FinSlnState.dynamoDBObjectForBusiness.business,
-                questions: [],
-              },
-            });
-            navigate("/");
-          });
-        }}
-        locationId="LP1W66XNB3MWG"
-      >
-        <CreditCard />
-      </PaymentForm>
+              paymentGateway({
+                ...FinSlnState.dynamoDBObjectForBusiness,
+                nonce: "cnon:card-nonce-ok",
+              }).then((d) => {
+                alert(d);
+                setShowWatit(false);
+
+                update_business({
+                  ...FinSlnState.dynamoDBObjectForBusiness,
+                  business: {
+                    ...FinSlnState.dynamoDBObjectForBusiness.business,
+                    questions: [],
+                  },
+                });
+                navigate("/dashboard");
+              });
+            }}
+            locationId="LP1W66XNB3MWG"
+          >
+            <CreditCard />
+          </PaymentForm>
+        </>
+      )}
     </div>
   );
 }

@@ -1,4 +1,6 @@
-
+.orders-container{
+    position: relative;
+}
 .main-heading {
     text-align: left;
     margin-top: -1rem;
@@ -78,4 +80,21 @@
     border: none;
     border-top: 1px solid #ddd;
     margin: 15px 0;
+}
+
+.back-from-orders{
+    position: absolute;
+    top: -1rem;
+    right: 1rem;
+}
+
+@media (max-width:780px) {
+.back-from-orders {
+        /* position: relative; */
+        left: 0;
+        top: 1.5rem;
+    }
+        .payment-card {
+        margin-top: 4rem;
+        }
 }
