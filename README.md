@@ -1,70 +1,225 @@
-# Getting Started with Create React App
+# WelcomePage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Business onboarding and growth introduction page for the FinSln platform built with React and React Router.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+`WelcomePage` serves as the primary introduction screen for users entering the platform.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The page is designed to:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Introduce the platform mission
+- Explain the purpose of business insights collection
+- Educate users about growth opportunities
+- Direct users toward onboarding and dashboard workflows
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+### Business Introduction
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The page communicates the platform’s mission of helping businesses achieve:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Growth
+- Financial optimization
+- Increased revenue
+- Market expansion
+- Operational efficiency
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### Business Insight Guidance
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Users are encouraged to complete a business insight process to provide information about:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Business goals
+- Operational challenges
+- Financial situation
+- Expectations
+- Growth objectives
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This allows the platform to deliver customized business solutions.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+### Business Challenges Navigation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The page includes a navigation action that routes users to the business challenges section.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```javascript id="im4sk6"
+const handleBusinessChallenges = () => {
+  navigate("./challenges");
+};
+```
 
-### Code Splitting
+Purpose:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Educate users about common business obstacles
+- Help users identify operational pain points
+- Improve onboarding personalization
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Dashboard Navigation
 
-### Making a Progressive Web App
+Users can begin the onboarding/business growth workflow through the main CTA button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```javascript id="v3p0k6"
+const handleReserve = () => {
+  navigate("./dashboard");
+};
+```
 
-### Advanced Configuration
+The button launches the business growth experience.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Frontend
 
-### `npm run build` fails to minify
+- React
+- React Router DOM
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Routing
+
+Uses `useNavigate()` for client-side navigation.
+
+```javascript id="w4k5r0"
+import { useNavigate } from "react-router-dom";
+```
+
+---
+
+## Component Structure
+
+```txt id="4t73nm"
+WelcomePage
+├── Heading
+├── Introductory Content
+├── Business Insight Description
+├── Business Challenges Navigation
+├── Growth-Oriented Messaging
+└── Start Business Growth CTA
+```
+
+---
+
+## User Flow
+
+```txt id="m1nv4i"
+User Lands on WelcomePage
+            │
+            ▼
+Reads Platform Introduction
+            │
+            ├── View Challenges
+            │        ▼
+            │   /challenges
+            │
+            ▼
+Start Business Growth
+            │
+            ▼
+        /dashboard
+```
+
+---
+
+## Styling
+
+The component uses CSS class-based styling:
+
+### Classes Used
+
+```txt id="h0b7i6"
+welcome
+welcome-heading
+initial-meeting
+```
+
+External stylesheet support is expected.
+
+---
+
+## Navigation Actions
+
+### Dashboard Navigation
+
+```javascript id="w8a9v1"
+navigate("./dashboard");
+```
+
+Used when the user clicks:
+
+```txt id="yjw57f"
+Start Business Growth
+```
+
+---
+
+### Challenges Navigation
+
+```javascript id="te01lx"
+navigate("./challenges");
+```
+
+Triggered when the user clicks:
+
+```txt id="yrv2it"
+HERE
+```
+
+---
+
+## Purpose
+
+The WelcomePage is intended to:
+
+- Increase onboarding clarity
+- Educate business users
+- Drive engagement
+- Encourage growth-focused workflows
+- Funnel users into the platform dashboard
+
+---
+
+## Example Use Cases
+
+- Business onboarding
+- Consulting platforms
+- Financial services portals
+- Growth advisory applications
+- Startup acceleration platforms
+- Business intelligence onboarding
+
+---
+
+## Future Enhancements
+
+Potential future improvements:
+
+- Animated onboarding
+- Personalized business recommendations
+- AI-generated business insights
+- Interactive challenge assessments
+- User progress tracking
+- Multi-step onboarding wizard
+- Analytics integration
+
+---
+
+## Export
+
+```javascript id="4rqynb"
+export default WelcomePage;
+```
+
+---
+
+## Source
+
+Documentation generated from the provided React component implementation.
